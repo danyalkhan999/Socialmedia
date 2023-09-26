@@ -1,0 +1,22 @@
+<div id="auth-page">
+  <div id="auth-page-landing">
+    <!-- left grid -->
+    <div id="landing-left">
+      <div id="landing-left-content">
+        <h1 routerLink="/">ShareLink</h1>
+        <p class="tag1">Connecting moment,</p>
+        <p class="tag2">onelink at a time</p>
+        <div class="new-user">
+          <small>New user</small>
+          <button class="btn btn-outline-primary" routerLink="signup">
+            Create a new account
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- right grid -->
+    <div id="landing-right">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

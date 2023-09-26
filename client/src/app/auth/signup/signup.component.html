@@ -1,0 +1,85 @@
+<div id="landing-right-content">
+  <h1>Sign Up</h1>
+  <form action="" [formGroup]="signupForm" (submit)="userSignup()">
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="username"
+        placeholder="@takashi"
+        formControlName="username"
+      />
+    </div>
+    <div
+      *ngIf="
+        signupForm.get('username').touched &&
+        signupForm.get('username').hasError('required')
+      "
+      class="text-danger"
+    >
+      <small>Username is required</small>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">E-mail</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        placeholder="jhon@provider.com"
+        formControlName="email"
+      />
+    </div>
+    <div
+      *ngIf="
+        signupForm.get('email').touched &&
+        signupForm.get('email').hasError('required')
+      "
+      class="text-danger"
+    >
+      <small>Email is required </small>
+    </div>
+    <div
+      *ngIf="
+        signupForm.get('email').touched &&
+        signupForm.get('email').hasError('email')
+      "
+      class="text-danger"
+    >
+      <small>Enter a valid email</small>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        placeholder="Password@123"
+        formControlName="password"
+      />
+    </div>
+    <div
+      *ngIf="
+        signupForm.get('password').touched &&
+        signupForm.get('password').hasError('required')
+      "
+      class="text-danger"
+    >
+      <small>Password is required</small>
+    </div>
+    <div
+      *ngIf="
+        signupForm.get('password').touched &&
+        signupForm.get('password').hasError('minlength')
+      "
+      class="text-danger"
+    >
+      <small>Password must be atleast of size 6</small>
+    </div>
+    <button class="btn btn-primary" type="submit">Sign Up</button>
+  </form>
+  <small
+    >Already a user
+    <a routerLink="../signin" routerLinkActive="active">SignIn </a></small
+  >
+</div>
