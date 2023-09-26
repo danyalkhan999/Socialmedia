@@ -1,6 +1,6 @@
 <div id="landing-right-content">
   <h1>LogIn</h1>
-  <form action="">
+  <form action="" [formGroup]="signinForm" (submit)="onSubmit()">
     <div class="mb-3">
       <label for="username" class="form-label">Username</label>
       <input
@@ -8,6 +8,7 @@
         class="form-control"
         id="username"
         placeholder="@takashi"
+        formControlName="username"
       />
     </div>
     <div class="mb-3">
@@ -17,9 +18,10 @@
         class="form-control"
         id="password"
         placeholder="Password@123"
+        formControlName="password"
       />
     </div>
-    <button class="btn btn-primary" type="button">LogIn</button>
+    <button class="btn btn-primary" type="submit">LogIn</button>
   </form>
   <small
     ><a routerLink="../signup" routerLinkActive="active">Register </a> for new

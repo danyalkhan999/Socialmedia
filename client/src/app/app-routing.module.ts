@@ -4,6 +4,7 @@ import { AuthComponent } from './auth/auth.component';
 
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { SharelinkComponent } from './sharelink/sharelink.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,8 @@ const routes: Routes = [
       { path: '', redirectTo: 'signin', pathMatch: 'full' },
     ],
   },
+
+  { path: 'sharelink', component: SharelinkComponent },
 ];
 
 @NgModule({

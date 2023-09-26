@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
-import { UsersService } from 'src/app/service/users.service';
+import { UsersService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -30,11 +30,12 @@ export class SignupComponent implements OnInit {
       this.users.addNewUser(userData).subscribe(
         (res) => {
           console.log(res);
-          this.toastr.success('Logged in', 'Success');
+          this.toastr.success('Account Created');
+          this.signupForm.reset();
         },
         (err) => {
           console.log('My err', err);
-          this.toastr.error(err.error, 'Invalid');
+          this.toastr.error(err.error);
           // if (err.error === 'Username is not available') {
           //   this.toastr.error('Username is already in use', 'Invalid Username');
           // }

@@ -13,9 +13,23 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharelinkComponent } from './sharelink/sharelink.component';
+import { ProfileComponent } from './sharelink/profile/profile.component';
+import { EditProfileComponent } from './sharelink/edit-profile/edit-profile.component';
+
+import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
+import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
 
 @NgModule({
-  declarations: [AppComponent, AuthComponent, SignupComponent, SigninComponent],
+  declarations: [
+    AppComponent,
+    AuthComponent,
+    SignupComponent,
+    SigninComponent,
+    SharelinkComponent,
+    ProfileComponent,
+    EditProfileComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -29,6 +43,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       easeTime: 700,
     }),
     BrowserAnimationsModule,
+    MdbCheckboxModule,
+    MdbCollapseModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

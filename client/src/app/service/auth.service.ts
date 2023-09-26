@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -10,6 +11,11 @@ export class UsersService {
 
   addNewUser(userData): Observable<any> {
     console.log('name', userData);
-    return this.http.post('http://localhost:4000/api/auth/signup', userData);
+    return this.http.post(environment.BASEURL + 'auth/signup', userData);
+  }
+
+  loginUser(userData) {
+    console.log('LOGIN', userData);
+    return this.http.post(environment.BASEURL + 'auth/signin', userData);
   }
 }
