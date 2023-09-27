@@ -56,7 +56,7 @@ export const signup = async (req, res, next) => {
 };
 
 export const signin = async (req, res, next) => {
-  //   console.log(req.body);
+  console.log("Node Body", req.body);
 
   try {
     const user = await User.findOne({ username: req.body.username });
@@ -80,6 +80,6 @@ export const signin = async (req, res, next) => {
       .status(200)
       .json({ user: user._id });
   } catch (error) {
-    next(error);
+    next(handleError(400, error))
   }
 };

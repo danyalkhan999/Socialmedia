@@ -11,6 +11,7 @@ const UserSchema = new mongoose.Schema(
     description: { type: String },
     posts: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
     occupation: { type: String },
+    gender: { type: String },
     active: {
       type: Boolean,
       default: true

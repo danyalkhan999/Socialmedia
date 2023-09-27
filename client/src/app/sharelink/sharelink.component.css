@@ -1,12 +1,142 @@
 @import url("https://fonts.googleapis.com/css2?family=Fuggles&display=swap");
 
 #home-container {
+  width: 100vw;
+  display: flex;
 }
 
-.fam-fugly {
+#navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1em;
+  height: 100vh;
+  margin: 0 1.5em;
+  width: auto;
+  justify-content: space-between;
+  border-right: 1px solid #282828;
+}
+
+#logo h1 {
+  font-family: "Fuggles", cursive;
+  font-size: 48px;
+}
+
+#nav-menu {
+}
+
+#nav-menu ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+#nav-menu li {
+  list-style: none;
+  margin: 0.5em;
+  padding: 0.7em;
+  font-size: 1em;
+}
+
+#nav-menu li i {
+  margin-right: 11px;
+}
+
+#nav-menu li:active {
+  background-color: lightcoral;
+}
+
+#logout {
+  align-self: flex-start;
+}
+
+#logout i {
+  margin-right: 11px;
+}
+
+#container {
+  width: 90%;
+}
+/* .fam-fugly {
   font-family: "Fuggles", cursive;
 }
 
 .font-h {
   font-size: 48px;
 }
+
+.nav-item a:active {
+  color: black;
+}
+
+.pd {
+  padding: 0.7em;
+} */
+
+/* media query */
+
+@media screen and (max-width: 768px) {
+  #navbar {
+    margin: 0;
+  }
+  #logo h1 {
+    display: none;
+  }
+  span {
+    display: none;
+  }
+  i {
+    font-size: 24px;
+  }
+  #logout {
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 615px) {
+  #navbar {
+    padding: 1em 0;
+  }
+  i {
+    font-size: 18px;
+  }
+}
+
+/* @media screen and (max-width: 426px) {
+  #logout {
+    display: none;
+  }
+
+  #navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+    border-right: none;
+    border-bottom: 1px solid #282828;
+  }
+
+
+
+  #nav-menu ul {
+    flex-direction: row;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  i {
+    font-size: 1rem;
+    margin: 0;
+  }
+  #logout {
+    display: block;
+  }
+}
+@media screen and (max-width: 375px) {
+} */

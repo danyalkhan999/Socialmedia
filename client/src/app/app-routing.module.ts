@@ -5,6 +5,11 @@ import { AuthComponent } from './auth/auth.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { SharelinkComponent } from './sharelink/sharelink.component';
+import { ProfileComponent } from './sharelink/profile/profile.component';
+import { MessageComponent } from './sharelink/message/message.component';
+import { CreateComponent } from './sharelink/create/create.component';
+import { SearchComponent } from './sharelink/search/search.component';
+import { HomeComponent } from './sharelink/home/home.component';
 
 const routes: Routes = [
   {
@@ -17,7 +22,18 @@ const routes: Routes = [
     ],
   },
 
-  { path: 'sharelink', component: SharelinkComponent },
+  {
+    path: 'sharelink',
+    component: SharelinkComponent,
+    children: [
+      { path: 'profile', component: ProfileComponent },
+      { path: 'message', component: MessageComponent },
+      { path: 'create', component: CreateComponent },
+      { path: 'search', component: SearchComponent },
+      { path: 'home', component: HomeComponent },
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+    ],
+  },
 ];
 
 @NgModule({

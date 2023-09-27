@@ -15,10 +15,14 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharelinkComponent } from './sharelink/sharelink.component';
 import { ProfileComponent } from './sharelink/profile/profile.component';
-import { EditProfileComponent } from './sharelink/edit-profile/edit-profile.component';
 
 import { MdbCheckboxModule } from 'mdb-angular-ui-kit/checkbox';
 import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
+import { HomeComponent } from './sharelink/home/home.component';
+import { SearchComponent } from './sharelink/search/search.component';
+import { CreateComponent } from './sharelink/create/create.component';
+import { MessageComponent } from './sharelink/message/message.component';
+import { SidenavComponent } from './sharelink/sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
     SigninComponent,
     SharelinkComponent,
     ProfileComponent,
-    EditProfileComponent,
+    HomeComponent,
+    SearchComponent,
+    CreateComponent,
+    MessageComponent,
+    SidenavComponent,
   ],
   imports: [
     BrowserModule,

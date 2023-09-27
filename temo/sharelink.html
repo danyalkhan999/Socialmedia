@@ -1,0 +1,110 @@
+<div class="container-fluid">
+  <div class="row flex-nowrap">
+    <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 border-end">
+      <div
+        class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-dark vh-100 my-2"
+      >
+        <a
+          href="/"
+          class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-decoration-none"
+        >
+          <h1 class="font-h d-none d-sm-inline fam-fugly">ShareLink</h1>
+        </a>
+        <ul
+          class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+          id="menu"
+        >
+          <li class="nav-item">
+            <a
+              routerLink="home"
+              routerLinkActive="active"
+              class="nav-link align-middle my-2 d-flex align-items-center pd"
+            >
+              <i class="fas fs-4 me-1 fa-home"></i>
+              <span class="ms-1 d-none d-sm-inline">Home</span>
+            </a>
+          </li>
+          <li>
+            <a
+              routerLink="search"
+              routerLinkActive="active"
+              class="nav-link align-middle my-2 d-flex align-items-center pd"
+            >
+              <i class="fas fs-4 me-1 fa-search"></i>
+              <span class="ms-1 d-none d-sm-inline">Search</span>
+            </a>
+          </li>
+          <li>
+            <a
+              routerLink="create"
+              routerLinkActive="active"
+              class="nav-link align-middle my-2 d-flex align-items-center pd"
+            >
+              <i class="fas fs-4 me-1 fa-plus-square"></i>
+              <span class="ms-1 d-none d-sm-inline">Create</span></a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="message"
+              routerLinkActive="active"
+              class="nav-link pd align-middle my-2 d-flex align-items-center"
+            >
+              <i class="fas fs-4 me-1 fa-envelope"></i>
+              <span class="ms-1 d-none d-sm-inline">Message</span></a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="profile"
+              routerLinkActive="active"
+              class="nav-link pd align-middle my-2 d-flex align-items-center"
+            >
+              <img
+                src="https://github.com/mdo.png"
+                alt="hugenerd"
+                width="27"
+                height="27"
+                class="rounded-circle me-1"
+              />
+              <span class="ms-1 d-none d-sm-inline">Profile</span>
+            </a>
+            <!-- <a href="#" class="nav-link px-0 align-middle my-2">
+                <i class="fas fs-4 me-1 fa-user-circle"></i>
+                <span class="ms-1 d-none d-sm-inline">Profile</span>
+              </a> -->
+          </li>
+        </ul>
+        <hr />
+        <div class="dropdown pb-4">
+          <a href="#" class="nav-link px-0 d-flex align-items-center my-2">
+            <i class="fas fs-5 fa-power-off me-2"></i>
+            <span class="d-none d-sm-inline text-dark mx-1">Log Out</span>
+          </a>
+          <!-- <a
+              href="#"
+              class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+              id="dropdownUser1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img
+                src="https://github.com/mdo.png"
+                alt="hugenerd"
+                width="30"
+                height="30"
+                class="rounded-circle me-2"
+              />
+              <span class="d-none d-sm-inline text-dark mx-1">loser</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+              <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul> -->
+        </div>
+      </div>
+    </div>
+    <div class="col py-3">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
