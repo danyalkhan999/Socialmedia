@@ -1,0 +1,132 @@
+/* body {
+  margin: 0;
+  padding: 0;
+  background-color: steelblue;
+  font-family: "Nunito Semibold";
+
+  width: 100%;
+  height: 100%;
+} */
+
+#container {
+  max-width: 100%;
+  /* margin: 0 auto; */
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: minmax(50px, auto);
+  grid-template-areas:
+    "image name name name name"
+    "image name name name name"
+    "details details details . ."
+    "stats stats stats stats stats";
+}
+
+@media screen and (min-width: 768px) {
+  #container {
+    max-width: 80%;
+    /* margin: 0 auto; */
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: minmax(50px, auto);
+    grid-template-areas:
+      "image image name name name"
+      "image image stats stats stats"
+      "image image details details details";
+  }
+
+  /* .img1 {
+    height: 10rem !important;
+  } */
+
+  .details h3 {
+    font-size: 24px;
+  }
+
+  .details-wrapper {
+    font-size: 18px;
+  }
+}
+.img {
+  grid-area: image;
+  max-width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img .img1 {
+  border-radius: 50%;
+  margin: 20px 0;
+  object-fit: cover;
+  width: 120px;
+  height: 120px;
+}
+.name {
+  grid-area: name;
+  /* background-color: lightcoral; */
+}
+.stats {
+  grid-area: stats;
+  /* background-color: lavenderblush; */
+  display: flex;
+  /* padding: 1rem; */
+  justify-content: space-around;
+}
+.details {
+  grid-area: details;
+  /* background-color: lightgreen; */
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+  /* padding: 1rem; */
+}
+.name-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+  gap: 10px;
+}
+.name-wrapper span {
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
+.name-wrapper button {
+  width: 70%;
+  border: none;
+  border-radius: 8px;
+  /* height: 25px; */
+  font-size: 1rem;
+  padding: 5px 0;
+  letter-spacing: 1px;
+}
+
+.details h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.details-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  font-size: 14px;
+}
+.details-wrapper p {
+  margin: 0;
+}
+
+.stat-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 25px;
+  flex-direction: column;
+}
+
+.stat-wrapper h3 {
+  margin: 0;
+}

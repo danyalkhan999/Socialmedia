@@ -23,6 +23,7 @@ import { SearchComponent } from './sharelink/search/search.component';
 import { CreateComponent } from './sharelink/create/create.component';
 import { MessageComponent } from './sharelink/message/message.component';
 import { SidenavComponent } from './sharelink/sidenav/sidenav.component';
+import { BodyComponent } from './sharelink/body/body.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { SidenavComponent } from './sharelink/sidenav/sidenav.component';
     CreateComponent,
     MessageComponent,
     SidenavComponent,
+    BodyComponent,
   ],
   imports: [
     BrowserModule,
