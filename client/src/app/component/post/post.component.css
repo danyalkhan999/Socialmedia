@@ -1,0 +1,111 @@
+.info {
+  display: flex;
+  /* background: lightgreen; */
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.7rem;
+}
+
+.info i {
+  text-align: center;
+  color: red;
+}
+
+.user {
+  height: 50px;
+  /* background: lightblue; */
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.user p {
+  margin: 0;
+}
+
+.user img {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.post-image {
+  width: 100%;
+  min-height: 300px;
+  object-fit: cover;
+}
+
+.items {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  justify-content: space-between;
+  margin: 0 15px;
+  /* background-color: lightsalmon; */
+}
+
+.item-start {
+  display: flex;
+  gap: 10px;
+}
+
+.items i {
+  font-size: 24px;
+}
+
+.likes {
+  margin: 0;
+  padding: 0 0.7rem;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.description-wrapper {
+  padding: 0 0.7rem;
+  font-size: 13px;
+}
+
+.username {
+  font-weight: 500;
+  margin-right: 0.4rem;
+}
+
+.comments {
+  font-weight: 500;
+  font-size: 13px;
+  color: grey;
+}
+
+.comment-input {
+  width: 100%;
+  background-color: #fff1e6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+}
+.comment-input img {
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-left: 0.7rem;
+}
+
+.comment-box {
+  outline: none;
+  border: none;
+  width: 70%;
+  padding: 0.5rem;
+  background-color: #fff1e6;
+}
+.btn {
+  color: brown;
+}
+
+.btn:hover {
+  border: 1px solid;
+  color: #fff;
+  background-color: cadetblue;
+}

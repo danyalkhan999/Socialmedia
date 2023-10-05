@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
+import { ToastrService } from 'ngx-toastr';
 import { UsersService } from 'src/app/service/auth.service';
 
 @Component({
@@ -10,7 +13,12 @@ import { UsersService } from 'src/app/service/auth.service';
 export class SigninComponent implements OnInit {
   signinForm: FormGroup;
 
-  constructor(private users: UsersService) {}
+  constructor(
+    private users: UsersService,
+    private cookieService: CookieService,
+    private toastr: ToastrService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.signinForm = new FormGroup({
@@ -24,11 +32,19 @@ export class SigninComponent implements OnInit {
       const signData = this.signinForm.value;
 
       this.users.loginUser(signData).subscribe(
-        (res) => {
+        (res: any) => {
           console.log(res);
+          // console.log(res.userToken);
+          this.cookieService.set('userToken', res.userToken, {
+            expires: 10,
+            path: '/',
+          });
+          this.router.navigate(['sharelink/home']);
+          this.toastr.success('Logged In');
         },
         (err) => {
           console.log(err);
+          this.toastr.error('Error');
         }
       );
     }

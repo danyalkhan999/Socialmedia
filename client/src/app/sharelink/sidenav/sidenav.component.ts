@@ -6,6 +6,10 @@ import {
   Output,
 } from '@angular/core';
 import { navbarData } from './nav-data';
+import { MatDialog } from '@angular/material/dialog';
+import { PostComponent } from 'src/app/component/post/post.component';
+import { CreateComponent } from '../create/create.component';
+import { ConfirmComponent } from 'src/app/component/confirm/confirm.component';
 
 interface SideNavToggle {
   screenWidth: number;
@@ -19,6 +23,7 @@ interface SideNavToggle {
 })
 export class SidenavComponent implements OnInit {
   @Output() onToggleSidenav: EventEmitter<SideNavToggle> = new EventEmitter();
+  constructor(private dialog: MatDialog) {}
   collapsed = true;
   screenWidth = 0;
   navData = navbarData;
@@ -52,6 +57,24 @@ export class SidenavComponent implements OnInit {
     this.onToggleSidenav.emit({
       collapsed: this.collapsed,
       screenWidth: this.screenWidth,
+    });
+  }
+
+  openPopup(data) {
+    if (data === 'Create') {
+      this.dialog.open(CreateComponent, {
+        width: '60%',
+        data: {
+          title: 'Create Post...',
+        },
+      });
+    }
+  }
+
+  logoutClick() {
+    this.dialog.open(ConfirmComponent, {
+      width: '500px',
+      height: 'auto',
     });
   }
 }

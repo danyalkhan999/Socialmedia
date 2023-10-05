@@ -24,7 +24,16 @@ import { CreateComponent } from './sharelink/create/create.component';
 import { MessageComponent } from './sharelink/message/message.component';
 import { SidenavComponent } from './sharelink/sidenav/sidenav.component';
 import { BodyComponent } from './sharelink/body/body.component';
-
+import { PostComponent } from './component/post/post.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { EditProfileComponent } from './sharelink/edit-profile/edit-profile.component';
+import { ConfirmComponent } from './component/confirm/confirm.component';
+import { CookieService } from 'ngx-cookie-service';
+import { UsersService } from './service/auth.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +48,9 @@ import { BodyComponent } from './sharelink/body/body.component';
     MessageComponent,
     SidenavComponent,
     BodyComponent,
+    PostComponent,
+    EditProfileComponent,
+    ConfirmComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,8 +67,13 @@ import { BodyComponent } from './sharelink/body/body.component';
     BrowserAnimationsModule,
     MdbCheckboxModule,
     MdbCollapseModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatCardModule,
+    MatIconModule,
   ],
-  providers: [],
+  providers: [CookieService, UsersService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

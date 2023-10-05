@@ -1,0 +1,45 @@
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profileImg {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.profileImg img {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #d00000;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.editProfile {
+  color: #8e94f2;
+  border: 1px solid #8e94f2;
+  border-radius: 10px;
+  font-size: 11px;
+  padding: 0.2rem 0.3rem;
+  cursor: pointer;
+}
+.editProfile i {
+  margin-right: 6px;
+}
+
+#photo-upload {
+  display: none;
+}

@@ -11,11 +11,18 @@ export class UsersService {
 
   addNewUser(userData): Observable<any> {
     console.log('name', userData);
+
     return this.http.post(environment.BASEURL + 'auth/signup', userData);
   }
 
   loginUser(userData) {
     console.log('LOGIN', userData);
     return this.http.post(environment.BASEURL + 'auth/signin', userData);
+  }
+
+  logoutUser() {
+    console.log('logout');
+
+    return this.http.get(environment.BASEURL + 'auth/logout');
   }
 }

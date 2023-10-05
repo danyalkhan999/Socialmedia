@@ -11,9 +11,10 @@
     <li class="sidenav-nav-item" *ngFor="let data of navData">
       <a
         class="sidenav-nav-link"
-        [routerLink]="[data.routelink]"
-        routerLinkActive="active"
+        [routerLink]="data.routelink ? [data.routelink] : []"
+        [routerLinkActive]="data.routelink ? 'active' : ''"
         [routerLinkActiveOptions]="{ exact: true }"
+        (click)="openPopup(data.label)"
       >
         <i class="sidenav-link-icon" [ngClass]="data.icon"></i>
         <span class="sidenav-link-text" *ngIf="collapsed">{{
@@ -25,7 +26,7 @@
 
   <hr />
 
-  <button class="logout">
+  <button class="logout" (click)="logoutClick()">
     <i class="fas fa-power-off"></i>
     <span *ngIf="collapsed">Log Out</span>
   </button>

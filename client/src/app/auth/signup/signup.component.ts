@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 import { ToastrService } from 'ngx-toastr';
 import { UsersService } from 'src/app/service/auth.service';
 
@@ -9,7 +10,11 @@ import { UsersService } from 'src/app/service/auth.service';
   styleUrls: ['./signup.component.css'],
 })
 export class SignupComponent implements OnInit {
-  constructor(private users: UsersService, private toastr: ToastrService) {}
+  constructor(
+    private users: UsersService,
+    private toastr: ToastrService,
+    private cookieService: CookieService
+  ) {}
 
   signupForm: FormGroup;
 
@@ -29,7 +34,8 @@ export class SignupComponent implements OnInit {
       const userData = this.signupForm.value;
       this.users.addNewUser(userData).subscribe(
         (res) => {
-          console.log(res);
+          console.log(res.accessToken);
+          this.cookieService.set('userToken', res.accessToken);
           this.toastr.success('Account Created');
           this.signupForm.reset();
         },

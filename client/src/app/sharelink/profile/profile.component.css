@@ -9,60 +9,53 @@
 } */
 
 #container {
-  max-width: 100%;
+  max-width: 80%;
   /* margin: 0 auto; */
   display: grid;
-  grid-gap: 15px;
+
   grid-template-columns: repeat(5, 1fr);
   grid-auto-rows: minmax(50px, auto);
   grid-template-areas:
-    "image name name name name"
-    "image name name name name"
-    "details details details . ."
-    "stats stats stats stats stats";
+    "image image name name name"
+    "image image stats stats stats"
+    "image image details details details";
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
   #container {
-    max-width: 80%;
+    max-width: 100%;
     /* margin: 0 auto; */
     display: grid;
-
+    grid-gap: 15px;
     grid-template-columns: repeat(5, 1fr);
     grid-auto-rows: minmax(50px, auto);
     grid-template-areas:
-      "image image name name name"
-      "image image stats stats stats"
-      "image image details details details";
+      "image name name name name"
+      "details details details . ."
+      "stats stats stats stats stats";
   }
 
-  /* .img1 {
-    height: 10rem !important;
-  } */
-
-  .details h3 {
-    font-size: 24px;
-  }
-
-  .details-wrapper {
-    font-size: 18px;
+  .img1 {
+    width: 50px;
+    height: 50px;
   }
 }
+
 .img {
   grid-area: image;
-  max-width: 100%;
-  height: auto;
+  /* max-width: 100%; */
+
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.img .img1 {
+.img1 {
   border-radius: 50%;
   margin: 20px 0;
   object-fit: cover;
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
 }
 .name {
   grid-area: name;
@@ -125,8 +118,18 @@
   gap: 10px;
   margin-right: 25px;
   flex-direction: column;
+  text-align: center;
 }
 
-.stat-wrapper h3 {
+.stat-wrapper h5 {
   margin: 0;
+  font-size: 17px;
+}
+
+#posts-container {
+  max-width: 500px;
+  margin: 1rem auto;
+  border: 1px solid greenyellow;
+
+  height: auto;
 }

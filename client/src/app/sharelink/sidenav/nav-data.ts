@@ -10,7 +10,7 @@ export const navbarData = [
     label: 'Search',
   },
   {
-    routelink: 'create',
+    routelink: null,
     icon: 'fas fa-plus-square',
     label: 'Create',
   },

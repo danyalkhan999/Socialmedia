@@ -21,6 +21,10 @@ const isAvailable = async (username, email) => {
 };
 
 
+const isVerified = (email) => {
+  return false;
+}
+
 export const signup = async (req, res, next) => {
 
   console.log(req.body)
@@ -37,6 +41,9 @@ export const signup = async (req, res, next) => {
       res.status(400).json("Username is not available");
     if (available.email) res.status(400).json("Email is already is use");
 
+    if (!isVerified(email)) return res.status(400).json('Email not verified')
+
+
     const salt = bcrypt.genSaltSync(11);
     const hashPassword = bcrypt.hashSync(req.body.password, salt);
     const newUser = new User({ ...req.body, password: hashPassword });
@@ -49,7 +56,7 @@ export const signup = async (req, res, next) => {
         maxAge: maxAge * 1000,
       })
       .status(200)
-      .json({ newUser: newUser._id });
+      .json({ newUser: newUser._id, accessToken: token });
   } catch (error) {
     next(error);
   }
@@ -68,7 +75,7 @@ export const signin = async (req, res, next) => {
       user.password
     );
 
-    if (!isPasswordCorrect) return next(handleError(400, "Incorrect Password"));
+    if (!isPasswordCorrect) return res.status(404).json({ message: "Incorrect Password" });
 
     const token = createToken(user._id);
 
@@ -78,8 +85,14 @@ export const signin = async (req, res, next) => {
         maxAge: maxAge * 1000,
       })
       .status(200)
-      .json({ user: user._id });
+      .json({ user: user._id, userToken: token });
   } catch (error) {
     next(handleError(400, error))
   }
 };
+
+export const logout = (req, res) => {
+  console.log("logged out test")
+  res.status(200).json({ message: "Logged Out" })
+
+}
