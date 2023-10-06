@@ -13,6 +13,9 @@ const UserSchema = new mongoose.Schema(
     posts: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
     occupation: { type: String },
     gender: { type: String },
+    isEmailVerified: { type: Boolean, default: false },
+    otp: { type: String },
+    otpExpires: { type: Date },
     active: {
       type: Boolean,
       default: true

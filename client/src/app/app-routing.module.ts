@@ -7,7 +7,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { SharelinkComponent } from './sharelink/sharelink.component';
 import { ProfileComponent } from './sharelink/profile/profile.component';
 import { MessageComponent } from './sharelink/message/message.component';
-// import { CreateComponent } from './sharelink/create/create.component';
+
 import { SearchComponent } from './sharelink/search/search.component';
 import { HomeComponent } from './sharelink/home/home.component';
 import { authGuardGuard } from './Guard/auth-guard.guard';

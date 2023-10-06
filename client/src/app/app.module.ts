@@ -34,6 +34,7 @@ import { EditProfileComponent } from './sharelink/edit-profile/edit-profile.comp
 import { ConfirmComponent } from './component/confirm/confirm.component';
 import { CookieService } from 'ngx-cookie-service';
 import { UsersService } from './service/auth.service';
+
 @NgModule({
   declarations: [
     AppComponent,
